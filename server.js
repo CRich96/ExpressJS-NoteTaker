@@ -1,6 +1,6 @@
 const express = require('express');
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const reviews = require('./db/db.json');
 
 const app = express();
@@ -16,6 +16,6 @@ require("./routes/api-routes")(app);
 
 
 // Starts the server to begin listening
-app.listen(process.env.PORT, function() {
+app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
 });
